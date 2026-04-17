@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fitness-Einstellungstool</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Interaktives Recomp-Modell</p>
+          <h1 id="page-title">Fitness-Einstellungstool</h1>
+          <p class="intro">
+            Zieh einen Regler. Die anderen reagieren automatisch, weil Fettabbau,
+            Muskelaufbau, Aufwand und Hunger biologisch zusammenhängen.
+          </p>
+        </div>
+        <div class="score-plate" aria-label="Aktuelle Auswertung">
+          <canvas id="metabolic-map" width="360" height="260"></canvas>
+          <div class="score-readout">
+            <span id="mode-label">Recomposition</span>
+            <strong id="score-label">Ausbalanciert</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-grid" aria-label="Regler">
+        <article class="control-panel">
+          <div class="panel-heading">
+            <h2>Regler</h2>
+            <button class="icon-button" id="reset-button" type="button" aria-label="Zuruecksetzen" title="Zuruecksetzen">
+              &#8634;
+            </button>
+          </div>
+
+          <div class="slider-group" data-key="lean">
+            <div class="slider-topline">
+              <label for="lean">Fett abbauen <span>(lean werden)</span></label>
+              <output id="lean-output" for="lean">50</output>
+            </div>
+            <input id="lean" type="range" min="0" max="100" value="50">
+            <p id="lean-caption">Moderates Defizit mit guter Chance auf Muskel-Erhalt.</p>
+          </div>
+
+          <div class="slider-group" data-key="muscle">
+            <div class="slider-topline">
+              <label for="muscle">Muskeln aufbauen <span>(stark werden)</span></label>
+              <output id="muscle-output" for="muscle">50</output>
+            </div>
+            <input id="muscle" type="range" min="0" max="100" value="50">
+            <p id="muscle-caption">Solider Trainingsreiz, noch kompatibel mit Fettabbau.</p>
+          </div>
+
+          <div class="slider-group" data-key="effort">
+            <div class="slider-topline">
+              <label for="effort">Anstrengung</label>
+              <output id="effort-output" for="effort">55</output>
+            </div>
+            <input id="effort" type="range" min="0" max="100" value="55">
+            <p id="effort-caption">Genug Einsatz fuer Training, Schritte und Essensplanung.</p>
+          </div>
+
+          <div class="slider-group hunger" data-key="hunger">
+            <div class="slider-topline">
+              <label for="hunger">Hunger <span>(Nebenwirkung)</span></label>
+              <output id="hunger-output" for="hunger">45</output>
+            </div>
+            <input id="hunger" type="range" min="0" max="100" value="45" aria-describedby="hunger-note">
+            <p id="hunger-note">Hunger kann bewegt werden, zieht aber vor allem Fettabbau und Aufwand mit.</p>
+          </div>
+        </article>
+
+        <aside class="insight-panel" aria-live="polite">
+          <div class="status-band" id="status-band">
+            <span id="status-kicker">Aktuelle Strategie</span>
+            <strong id="strategy-title">Recomposition</strong>
+            <p id="strategy-copy">
+              Moderater Fettabbau, progressives Krafttraining und genug Energie fuer Leistung.
+            </p>
+          </div>
+
+          <div class="metrics">
+            <div>
+              <span>Kalorienlage</span>
+              <strong id="energy-balance">leichtes Defizit</strong>
+            </div>
+            <div>
+              <span>Trainingsreiz</span>
+              <strong id="training-load">mittel-hoch</strong>
+            </div>
+            <div>
+              <span>Erholung</span>
+              <strong id="recovery-pressure">machbar</strong>
+            </div>
+          </div>
+
+          <div class="relationship-map">
+            <h2>Warum verschiebt sich das?</h2>
+            <ul id="rule-list">
+              <li>Mehr Fettabbau bedeutet mehr Defizit und meistens mehr Hunger.</li>
+              <li>Mehr Muskelaufbau braucht Trainingsreiz, Protein, Schlaf und genug Energie.</li>
+              <li>Mehr Anstrengung kann beides verbessern, erhoeht aber die Belastung.</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="evidence-strip" aria-label="Modellgrundlage">
+        <p>
+          Modellannahme: Fettverlust folgt vor allem aus einem Kaloriendefizit.
+          Muskelaufbau profitiert von progressivem Krafttraining, Protein und
+          ausreichender Energie; ein starkes Defizit macht ihn schwerer.
+        </p>
+        <div class="source-links">
+          <a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0174-y" target="_blank" rel="noreferrer">ISSN Position Stand</a>
+          <a href="https://www.healthline.com/nutrition/body-recomposition-scored" target="_blank" rel="noreferrer">Body Recomposition</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
