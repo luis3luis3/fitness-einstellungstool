@@ -224,19 +224,26 @@ input[type="range"] {
 }
 
 .range-labels {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 14px;
-  min-height: 18px;
-  margin: 0 0 8px;
-  color: var(--muted);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+  min-height: 24px;
+  margin: -2px 0 10px;
+  color: #4f4941;
   font-size: 0.76rem;
-  font-weight: 800;
+  font-weight: 850;
   line-height: 1.15;
 }
 
+.range-labels span {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 24px;
+}
+
 .range-labels span:last-child {
+  justify-content: flex-end;
   text-align: right;
 }
 
