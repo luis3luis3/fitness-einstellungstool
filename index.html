@@ -11,7 +11,7 @@
       <section class="hero" aria-labelledby="page-title">
         <div class="hero-copy">
           <p class="eyebrow">Interaktives Recomp-Modell</p>
-          <h1 id="page-title">Fitness-Einstellungstool</h1>
+          <h1 id="page-title">Fit-Regler</h1>
           <p class="intro">
             Zieh einen Regler. Die anderen reagieren automatisch, weil Fettabbau,
             Muskelaufbau, Aufwand und Hunger biologisch zusammenhängen.
@@ -41,6 +41,10 @@
               <output id="lean-output" for="lean">50</output>
             </div>
             <input id="lean" type="range" min="0" max="100" value="50">
+            <div class="range-labels" aria-hidden="true">
+              <span>wenig Fettabbau</span>
+              <span>viel Fettabbau</span>
+            </div>
             <p id="lean-caption">Moderates Defizit mit guter Chance auf Muskel-Erhalt.</p>
           </div>
 
@@ -50,6 +54,10 @@
               <output id="muscle-output" for="muscle">50</output>
             </div>
             <input id="muscle" type="range" min="0" max="100" value="50">
+            <div class="range-labels" aria-hidden="true">
+              <span>wenig Muskelaufbau</span>
+              <span>viel Muskelaufbau</span>
+            </div>
             <p id="muscle-caption">Solider Trainingsreiz, noch kompatibel mit Fettabbau.</p>
           </div>
 
@@ -59,6 +67,10 @@
               <output id="effort-output" for="effort">55</output>
             </div>
             <input id="effort" type="range" min="0" max="100" value="55">
+            <div class="range-labels" aria-hidden="true">
+              <span>wenig Anstrengung</span>
+              <span>viel Anstrengung</span>
+            </div>
             <p id="effort-caption">Genug Einsatz fuer Training, Schritte und Essensplanung.</p>
           </div>
 
@@ -68,6 +80,10 @@
               <output id="hunger-output" for="hunger">45</output>
             </div>
             <input id="hunger" type="range" min="0" max="100" value="45" aria-describedby="hunger-note">
+            <div class="range-labels" aria-hidden="true">
+              <span>wenig Hunger</span>
+              <span>viel Hunger</span>
+            </div>
             <p id="hunger-note">Hunger kann bewegt werden, zieht aber vor allem Fettabbau und Aufwand mit.</p>
           </div>
         </article>
